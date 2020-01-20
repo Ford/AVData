@@ -1,0 +1,16 @@
+<package format="2">
+  <name>fusion_description</name>
+  <version>1.0.0</version>
+  <description>
+  This package contains the URDF for a Ford fusion. We would like to thank
+  Joe Zalewski (Quantum Signal AI) for creating the Ford Fusion mesh.
+  </description>
+  <author>Ankit Vora</author>
+  <author>Siddharth Agarwal</author>
+  <maintainer email="avora3@ford.com">Ankit Vora</maintainer>
+  <maintainer email="sagarw20@ford.com">Siddharth Agarwal</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>urdf</depend>
+</package>

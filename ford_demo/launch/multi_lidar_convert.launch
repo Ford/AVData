@@ -1,0 +1,48 @@
+<!-- -*- mode: XML -*- -->
+<!-- run velodyne_pointcloud/CloudNodelet in a nodelet manager -->
+
+<launch>
+  <arg name="calibration" default="$(find ford_demo)/params/lidarIntrinsics.yaml" />
+  <arg name="manager" default="velodyne_nodelet_manager" />
+  <arg name="max_range" default="130.0" />
+  <arg name="min_range" default="3.0" />
+
+  <!-- start nodelet manager -->
+  <node pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager" />
+
+  <node pkg="nodelet" type="nodelet" name="velodyne_red_convert"
+        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+    <param name="calibration" value="$(arg calibration)"/>
+    <param name="max_range" value="$(arg max_range)"/>
+    <param name="min_range" value="$(arg min_range)"/>
+    <remap from="velodyne_packets" to="lidar_red_scan"/>
+    <remap from="velodyne_points" to="lidar_red_pointcloud"/>
+  </node>
+
+  <node pkg="nodelet" type="nodelet" name="velodyne_yellow_convert"
+        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+    <param name="calibration" value="$(arg calibration)"/>
+    <param name="max_range" value="$(arg max_range)"/>
+    <param name="min_range" value="$(arg min_range)"/>
+    <remap from="velodyne_packets" to="lidar_yellow_scan"/>
+    <remap from="velodyne_points" to="lidar_yellow_pointcloud"/>
+  </node>
+
+  <node pkg="nodelet" type="nodelet" name="velodyne_blue_convert"
+        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+    <param name="calibration" value="$(arg calibration)"/>
+    <param name="max_range" value="$(arg max_range)"/>
+    <param name="min_range" value="$(arg min_range)"/>
+    <remap from="velodyne_packets" to="lidar_blue_scan"/>
+    <remap from="velodyne_points" to="lidar_blue_pointcloud"/>
+  </node>
+
+  <node pkg="nodelet" type="nodelet" name="velodyne_green_convert"
+        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+    <param name="calibration" value="$(arg calibration)"/>
+    <param name="max_range" value="$(arg max_range)"/>
+    <param name="min_range" value="$(arg min_range)"/>
+    <remap from="velodyne_packets" to="lidar_green_scan"/>
+    <remap from="velodyne_points" to="lidar_green_pointcloud"/>
+  </node>
+</launch>

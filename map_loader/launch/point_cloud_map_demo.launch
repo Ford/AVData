@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="map_folder" default=""/>
+
+  <node name="point_cloud_map_loader" pkg="map_loader" type="point_cloud_map_loader" args="$(arg map_folder)" required="true">
+    <param name="pcd_topic" value="/pointcloud_map"/>
+    <param name="pose_topic" value="/pose_ground_truth"/>
+    <param name="neighbor_dist" value="128.0"/>
+    <param name="publish_rate" value="0.25"/>
+  </node>
+
+</launch>

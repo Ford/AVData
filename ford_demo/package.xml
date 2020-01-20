@@ -1,0 +1,21 @@
+<package format="2">
+  <name>ford_demo</name>
+  <version>1.0.0</version>
+  <description>
+  This package contains the relevant launch files, tools, rviz plugins, scripts
+  for Ford data release
+  </description>
+  <author>Ankit Vora</author>
+  <author>Siddharth Agarwal</author>
+  <maintainer email="avora3@ford.com">Ankit Vora</maintainer>
+  <maintainer email="sagarw20@ford.com">Siddharth Agarwal</maintainer>
+  <license>BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>fusion_description</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>velodyne_pointcloud</exec_depend>
+</package>
