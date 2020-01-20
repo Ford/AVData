@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="fusion">
+
+  <link name="body">
+    <visual>
+      <origin xyz="1.35 0 -0.45" rpy="0 -1.57 0"/>
+      <geometry>
+        <mesh filename="package://fusion_description/meshes/Ford_fusion.obj" scale="0.0098 0.0098 0.0098"/>
+      </geometry>
+    </visual>
+
+    <collision name="chassis">
+      <origin xyz="0.0 0.05 0.625" rpy="0 0 0"/>
+      <geometry>
+        <box size="1.7526 2.1 0.95"/>
+      </geometry>
+    </collision>
+
+    <collision name="front_bumper">
+      <origin xyz="0.0 -2.0 0.458488" rpy="0.0 0 0"/>
+      <geometry>
+        <box size="1.337282 0.48 0.566691"/>
+      </geometry>
+    </collision>
+
+    <collision name="hood">
+      <origin xyz="0.0 -1.900842 0.676305" rpy="0.341247 0 0"/>
+      <geometry>
+        <box size="1.597968 0.493107 0.265468"/>
+      </geometry>
+    </collision>
+
+    <collision name="windshield">
+      <origin xyz="0.0 -0.875105 1.032268" rpy="0.335476 0 0"/>
+      <geometry>
+        <box size="1.168381 1.654253 0.272347"/>
+      </geometry>
+    </collision>
+
+    <collision name="top_front">
+      <origin xyz="0.0 0.161236 1.386042" rpy="0.135030 0 0"/>
+      <geometry>
+        <box size="1.279154 0.625988 0.171868"/>
+      </geometry>
+    </collision>
+
+    <collision name="top_rear">
+      <origin xyz="0.0 0.817696 1.360069" rpy="-0.068997 0 0"/>
+      <geometry>
+        <box size="1.285130 0.771189 0.226557"/>
+      </geometry>
+    </collision>
+
+    <collision name="rear_window">
+      <origin xyz="0.0 1.640531 1.175126" rpy="-0.262017 0 0"/>
+      <geometry>
+        <box size="1.267845 1.116344 0.244286"/>
+      </geometry>
+    </collision>
+
+    <collision name="trunk">
+      <origin xyz="0.0 1.637059 0.888180" rpy="0.0 0 0"/>
+      <geometry>
+        <box size="1.788064 1.138988 0.482746"/>
+      </geometry>
+    </collision>
+
+    <collision name="back_bumper">
+      <origin xyz="0.0 2.054454 0.577870" rpy="0.0 0 0"/>
+      <geometry>
+        <box size="1.781650 0.512093 0.581427"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="1356.0"/>
+      <origin xyz="0 0 0.48" rpy="0 0 1.5708"/>
+      <inertia ixx="2581.13354740" ixy="0.0" ixz="0.0" iyy="591.30846112" iyz="0.0" izz="2681.95008628"/>
+    </inertial>
+  </link>
+
+  <link name="lidar_green">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="lidar_green_joint" type="fixed">
+    <parent link="body"/>
+    <child link="lidar_green"/>
+    <origin xyz="1.11862 0.506078 -1.22352" rpy="-3.1302 -0.4406 1.5691"/>
+  </joint>
+
+
+  <link name="lidar_red">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="lidar_red_joint" type="fixed">
+    <parent link="body"/>
+    <child link="lidar_red"/>
+    <origin xyz="1.12706 -0.40647 -1.33966" rpy="-3.139 0.0086 1.5774"/>
+  </joint>
+
+
+  <link name="lidar_blue">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="lidar_blue_joint" type="fixed">
+    <parent link="body"/>
+    <child link="lidar_blue"/>
+    <origin xyz="1.11524 0.367061 -1.33293" rpy="-3.1338 -0.0038 1.5667"/>
+  </joint>
+
+
+  <link name="lidar_yellow">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="lidar_yellow_joint" type="fixed">
+    <parent link="body"/>
+    <child link="lidar_yellow"/>
+    <origin xyz="1.11239 -0.531997 -1.21451" rpy="-3.1413 0.4440 1.5695"/>
+  </joint>
+
+  <link name="camera_center">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="camera_center_joint" type="fixed">
+    <parent link="body"/>
+    <child link="camera_center"/>
+    <origin xyz="2.031014 -0.029805 -0.845311" rpy="1.5522 0.0062 1.5487"/>
+  </joint>
+
+
+  <link name="camera_front_left">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="camera_front_left_joint" type="fixed">
+    <parent link="body"/>
+    <child link="camera_front_left"/>
+    <origin xyz="1.184931 -0.332952 -1.203022" rpy="1.5651 -0.0066 1.5833"/>
+  </joint>
+
+
+  <link name="camera_front_right">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="camera_front_right_joint" type="fixed">
+    <parent link="body"/>
+    <child link="camera_front_right"/>
+    <origin xyz="1.1822 0.2966 -1.1991" rpy="1.5732 0.0010 1.5581"/>
+  </joint>
+
+
+  <link name="camera_side_left">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="camera_side_left_joint" type="fixed">
+    <parent link="body"/>
+    <child link="camera_side_left"/>
+    <origin xyz="1.224634 -0.449533 -1.123144" rpy="1.5757 -0.0041 0.1495"/>
+  </joint>
+
+
+  <link name="camera_side_right">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="camera_side_right_joint" type="fixed">
+    <parent link="body"/>
+    <child link="camera_side_right"/>
+    <origin xyz="1.242781 0.410513 -1.127880" rpy="1.5723 0.0007 2.9603"/>
+  </joint>
+
+
+  <link name="camera_rear_left">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="camera_rear_left_joint" type="fixed">
+    <parent link="body"/>
+    <child link="camera_rear_left"/>
+    <origin xyz="1.050033 -0.297993 -1.198604" rpy="1.5569 0.0133 -1.5919"/>
+  </joint>
+
+
+  <link name="camera_rear_right">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="camera_rear_right_joint" type="fixed">
+    <parent link="body"/>
+    <child link="camera_rear_right"/>
+    <origin xyz="1.057758 0.240826 -1.205434" rpy="1.5546 -0.0017 -1.6049"/>
+  </joint>
+
+
+  <link name="imu">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/>
+    </inertial>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <parent link="body"/>
+    <child link="imu"/>
+    <origin xyz="-0.0929 0.0222 -0.4053" rpy="0 0.0001 -0.0001"/>
+  </joint>
+
+</robot>

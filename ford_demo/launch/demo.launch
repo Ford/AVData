@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="map_dir" default=""/>
+  <arg name="calibration_dir" default=""/>
+  <arg name="reflectivity_dir" default="$(arg map_dir)/ground_reflectivity/"/>
+  <arg name="point_cloud_dir" default="$(arg map_dir)/3d_point_cloud/"/>
+  <arg name="model" default="$(find fusion_description)/urdf/fusion.urdf"/>
+  <arg name="rvizconfig" default="$(find ford_demo)/rviz/demo.rviz" />
+
+  <param name="robot_description" textfile="$(arg model)"/>
+
+  <!-- Publish reflectivity map -->
+  <include file="$(find map_loader)/launch/reflectivity_map_demo.launch">
+    <arg name="map_folder" value="$(arg reflectivity_dir)"/>
+  </include>
+
+  <!-- Publish 3d point cloud map -->
+  <include file="$(find map_loader)/launch/point_cloud_map_demo.launch">
+    <arg name="map_folder" value="$(arg point_cloud_dir)"/>
+  </include>
+
+  <!-- Publish calibration extrinsic files -->
+  <node pkg="ford_demo" name="extrinsics_broadcaster" type="extrinsics_broadcast.sh" args="publish $(arg calibration_dir)" />
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+</launch>
