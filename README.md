@@ -45,11 +45,11 @@ source devel/setup.bash
 ## Dataset Download
 
 To get with quickly started, download the [sample data](https://ford-multi-av-seasonal.s3-us-west-2.amazonaws.com/Sample-Data.tar.gz "SampleData").
-In order to download more data, visit the [download](avdata.ford.com/Download "Downloads") page of the website
+In order to download more data, visit the [download](https://avdata.ford.com/downloads/default.aspx "Downloads") page of the website
 
 ## Usage
 
-In order to run the demo, you will need the rosbag, maps and the calibration files. These can be downloaded [here]("Downloads"). Once you have these files, run the demo launch file using
+In order to run the demo, you will need the rosbag, maps and the calibration files. These can be downloaded [here](https://avdata.ford.com/downloads/default.aspx). Once you have these files, run the demo launch file using
 
 ```
 roslaunch ford_demo demo.launch map_dir:=/path/to/map/folder/ calibration_dir:=/path/to/calibration/folder/
