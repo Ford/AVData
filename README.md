@@ -3,7 +3,7 @@ This Tutorial contains installation instructions for the packages released along
 
 ## Website
 
-To get more details about the Ford AV Dataset, please visit [avdata.ford.com](avdata.ford.com)
+To get more details about the Ford AV Dataset, please visit [avdata.ford.com](https://avdata.ford.com)
 
 ## System Requirements
 
