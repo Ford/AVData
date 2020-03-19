@@ -75,10 +75,21 @@ In order to convert bag files to human readable csv files, we provide a python s
 python bag_to_csv /path/to/your/bag/file/name.bag /path/to/the/config/file/name.yaml
 ```
 
-## Citation
+## Publication
 
-If you use this dataset, please cite our paper mentioned below.
+For further details, please refer to the following paper:
 
-## Paper
+Siddharth Agarwal, Ankit Vora, Gaurav Pandey, Wayne Williams, Helen Kourous and James McBride, "Ford Multi-AV Seasonal Dataset", in *arXiv preprint arXiv:2003.07969*,2020.[[arxiv]](https://arxiv.org/abs/2003.07969)[[pdf]](https://arxiv.org/pdf/2003.07969.pdf)
 
-Coming soon...
+If you use this dataset, please cite our paper or use the following Bibtex.
+
+```
+@misc{agarwal2020ford,
+    title={Ford Multi-AV Seasonal Dataset},
+    author={Siddharth Agarwal and Ankit Vora and Gaurav Pandey and Wayne Williams and Helen Kourous and James McBride},
+    year={2020},
+    eprint={2003.07969},
+    archivePrefix={arXiv},
+    primaryClass={cs.RO}
+}
+```
