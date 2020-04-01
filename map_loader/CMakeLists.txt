@@ -7,7 +7,9 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   pcl_conversions
 )
-pkg_check_modules(PCL_IO REQUIRED pcl_io-1.7)
+#pkg_check_modules(PCL_IO REQUIRED pcl_io-1.7)
+# Add to make compatible for Ubuntu 18.04 LTS with ROS Melodic
+pkg_check_modules(PCL_IO version pcl_io>=1.7)
 pkg_check_modules(EIGEN3 REQUIRED eigen3)
 
 set(CMAKE_CXX_FLAGS "-std=c++11 -O2 -Wall ${CMAKE_CXX_FLAGS}")
