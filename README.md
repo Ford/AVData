@@ -17,6 +17,7 @@ These packages depend on
 * python 2.x
 * Standard ROS packages (roscpp, rospy, sensor_msgs, std_msgs, tf2_ros)
 * rviz
+* pcl (>=1.7)
 * pcl_conversions
 * velodyne
 
