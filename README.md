@@ -41,6 +41,8 @@ source devel/setup.bash
   * *pose_topic* -  Name of the pose topic to determine vehicle location (default: */pose_ground_truth*)
   * *neighbor_dist* - The radius lookup to publish map tiles (m). A value of 128 means the publisher will publish map tiles whose origin lies within 128m (euclidean distance) of the origin of the tile the vehicle is in.
 
+* **map origin** - The origin is located at Lat and Long of 42.294319, -83.223275. The map and poses are with respect to this origin
+
   Please note that the poinclouds are computation intensive in general. If you're running a 16gb system, the visualization could lag due to large pointclouds. Tune the  *publish_rate, neighbor_dist* parameters to optimize based on your application.
 
 ## Dataset Download
