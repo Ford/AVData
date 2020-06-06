@@ -6,6 +6,7 @@
   <arg name="manager" default="velodyne_nodelet_manager" />
   <arg name="max_range" default="130.0" />
   <arg name="min_range" default="3.0" />
+  <arg name="model" default="32E" />
 
   <!-- start nodelet manager -->
   <node pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager" />
@@ -17,6 +18,7 @@
     <param name="min_range" value="$(arg min_range)"/>
     <param name="fixed_frame" value="/lidar_red"/>
     <param name="target_frame" value="/lidar_red"/>
+    <param name="model" value="$(arg model)"/>
     <remap from="velodyne_packets" to="lidar_red_scan"/>
     <remap from="velodyne_points" to="lidar_red_pointcloud"/>
   </node>
@@ -28,6 +30,7 @@
     <param name="min_range" value="$(arg min_range)"/>
     <param name="fixed_frame" value="/lidar_yellow"/>
     <param name="target_frame" value="/lidar_yellow"/>
+    <param name="model" value="$(arg model)"/>
     <remap from="velodyne_packets" to="lidar_yellow_scan"/>
     <remap from="velodyne_points" to="lidar_yellow_pointcloud"/>
   </node>
@@ -39,6 +42,7 @@
     <param name="min_range" value="$(arg min_range)"/>
     <param name="fixed_frame" value="/lidar_blue"/>
     <param name="target_frame" value="/lidar_blue"/>
+    <param name="model" value="$(arg model)"/>
     <remap from="velodyne_packets" to="lidar_blue_scan"/>
     <remap from="velodyne_points" to="lidar_blue_pointcloud"/>
   </node>
@@ -50,6 +54,7 @@
     <param name="min_range" value="$(arg min_range)"/>
     <param name="fixed_frame" value="/lidar_green"/>
     <param name="target_frame" value="/lidar_green"/>
+    <param name="model" value="$(arg model)"/>
     <remap from="velodyne_packets" to="lidar_green_scan"/>
     <remap from="velodyne_points" to="lidar_green_pointcloud"/>
   </node>
