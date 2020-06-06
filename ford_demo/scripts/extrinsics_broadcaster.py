@@ -13,8 +13,8 @@ def main():
     Reading transform info from a yaml file and publish to tf2
     """
     if len(sys.argv) == 1:
-        print "error: no extrinsics yaml file given"
-        print "usage: python extrinsics_broadcaster.py extrinsic_example.yaml"
+        print("error: no extrinsics yaml file given")
+        print("usage: python extrinsics_broadcaster.py extrinsic_example.yaml")
         return
 
     file_path = open(sys.argv[1])
@@ -31,9 +31,9 @@ def main():
                                         transform_stamped['header']['frame_id'],
                                         transform_stamped['child_frame_id'])
 
-    print command
+    print(command)
     ret = os.system(command)
-    print ret
+    print(ret)
 
 
 if __name__ == "__main__":
