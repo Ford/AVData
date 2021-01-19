@@ -12,7 +12,7 @@
   <node pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager" />
 
   <node pkg="nodelet" type="nodelet" name="velodyne_red_convert"
-        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+        args="load velodyne_pointcloud/TransformNodelet $(arg manager)">
     <param name="calibration" value="$(arg calibration)"/>
     <param name="max_range" value="$(arg max_range)"/>
     <param name="min_range" value="$(arg min_range)"/>
@@ -24,7 +24,7 @@
   </node>
 
   <node pkg="nodelet" type="nodelet" name="velodyne_yellow_convert"
-        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+        args="load velodyne_pointcloud/TransformNodelet $(arg manager)">
     <param name="calibration" value="$(arg calibration)"/>
     <param name="max_range" value="$(arg max_range)"/>
     <param name="min_range" value="$(arg min_range)"/>
@@ -36,7 +36,7 @@
   </node>
 
   <node pkg="nodelet" type="nodelet" name="velodyne_blue_convert"
-        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+        args="load velodyne_pointcloud/TransformNodelet $(arg manager)">
     <param name="calibration" value="$(arg calibration)"/>
     <param name="max_range" value="$(arg max_range)"/>
     <param name="min_range" value="$(arg min_range)"/>
@@ -48,7 +48,7 @@
   </node>
 
   <node pkg="nodelet" type="nodelet" name="velodyne_green_convert"
-        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+        args="load velodyne_pointcloud/TransformNodelet $(arg manager)">
     <param name="calibration" value="$(arg calibration)"/>
     <param name="max_range" value="$(arg max_range)"/>
     <param name="min_range" value="$(arg min_range)"/>
