@@ -6,50 +6,55 @@
   <arg name="manager" default="velodyne_nodelet_manager" />
   <arg name="max_range" default="130.0" />
   <arg name="min_range" default="3.0" />
+  <arg name="model" default="32E" />
 
   <!-- start nodelet manager -->
   <node pkg="nodelet" type="nodelet" name="$(arg manager)" args="manager" />
 
   <node pkg="nodelet" type="nodelet" name="velodyne_red_convert"
-        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+        args="load velodyne_pointcloud/TransformNodelet $(arg manager)">
     <param name="calibration" value="$(arg calibration)"/>
     <param name="max_range" value="$(arg max_range)"/>
     <param name="min_range" value="$(arg min_range)"/>
-    <param name="fixed_frame" value="/lidar_red"/>
-    <param name="target_frame" value="/lidar_red"/>
+    <param name="fixed_frame" value="lidar_red"/>
+    <param name="target_frame" value="lidar_red"/>
+    <param name="model" value="$(arg model)"/>
     <remap from="velodyne_packets" to="lidar_red_scan"/>
     <remap from="velodyne_points" to="lidar_red_pointcloud"/>
   </node>
 
   <node pkg="nodelet" type="nodelet" name="velodyne_yellow_convert"
-        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+        args="load velodyne_pointcloud/TransformNodelet $(arg manager)">
     <param name="calibration" value="$(arg calibration)"/>
     <param name="max_range" value="$(arg max_range)"/>
     <param name="min_range" value="$(arg min_range)"/>
-    <param name="fixed_frame" value="/lidar_yellow"/>
-    <param name="target_frame" value="/lidar_yellow"/>
+    <param name="fixed_frame" value="lidar_yellow"/>
+    <param name="target_frame" value="lidar_yellow"/>
+    <param name="model" value="$(arg model)"/>
     <remap from="velodyne_packets" to="lidar_yellow_scan"/>
     <remap from="velodyne_points" to="lidar_yellow_pointcloud"/>
   </node>
 
   <node pkg="nodelet" type="nodelet" name="velodyne_blue_convert"
-        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+        args="load velodyne_pointcloud/TransformNodelet $(arg manager)">
     <param name="calibration" value="$(arg calibration)"/>
     <param name="max_range" value="$(arg max_range)"/>
     <param name="min_range" value="$(arg min_range)"/>
-    <param name="fixed_frame" value="/lidar_blue"/>
-    <param name="target_frame" value="/lidar_blue"/>
+    <param name="fixed_frame" value="lidar_blue"/>
+    <param name="target_frame" value="lidar_blue"/>
+    <param name="model" value="$(arg model)"/>
     <remap from="velodyne_packets" to="lidar_blue_scan"/>
     <remap from="velodyne_points" to="lidar_blue_pointcloud"/>
   </node>
 
   <node pkg="nodelet" type="nodelet" name="velodyne_green_convert"
-        args="load velodyne_pointcloud/CloudNodelet $(arg manager)">
+        args="load velodyne_pointcloud/TransformNodelet $(arg manager)">
     <param name="calibration" value="$(arg calibration)"/>
     <param name="max_range" value="$(arg max_range)"/>
     <param name="min_range" value="$(arg min_range)"/>
-    <param name="fixed_frame" value="/lidar_green"/>
-    <param name="target_frame" value="/lidar_green"/>
+    <param name="fixed_frame" value="lidar_green"/>
+    <param name="target_frame" value="lidar_green"/>
+    <param name="model" value="$(arg model)"/>
     <remap from="velodyne_packets" to="lidar_green_scan"/>
     <remap from="velodyne_points" to="lidar_green_pointcloud"/>
   </node>
