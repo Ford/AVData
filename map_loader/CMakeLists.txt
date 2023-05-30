@@ -12,6 +12,8 @@ find_package(PCL 1.7 REQUIRED COMPONENTS io)
 pkg_check_modules(EIGEN3 REQUIRED eigen3)
 
 set(CMAKE_CXX_FLAGS "-std=c++11 -O2 -Wall ${CMAKE_CXX_FLAGS}")
+ADD_COMPILE_OPTIONS(-std=c++11 )
+ADD_COMPILE_OPTIONS(-std=c++14 )
 
 catkin_package(
 #  INCLUDE_DIRS include
