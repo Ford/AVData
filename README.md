@@ -7,7 +7,7 @@ To get more details about the Ford AV Dataset, please visit [avdata.ford.com](ht
 
 ## System Requirements
 
-This code repository has been tested on on Ubuntu 16.04 with ROS Kinetic and Ubuntu 18.04 with ROS Melodic.
+This code repository has been tested on on Ubuntu 16.04 with ROS Kinetic, Ubuntu 18.04 with ROS Melodic and Ubuntu 20.04 with ROS Noetic
 
 ## Installation
 
